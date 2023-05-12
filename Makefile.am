@@ -1,7 +1,7 @@
 AUTOMAKE_OPTIONS := subdir-objects
 
 bin_SCRIPTS = src/lsfirewire
-bin_PROGRAMS = src/firewire-request
+bin_PROGRAMS = src/firewire-request src/config-rom-pretty-printer
 
 pkglibexec_SCRIPTS = src/crpp
 
