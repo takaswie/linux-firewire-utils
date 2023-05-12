@@ -25,6 +25,8 @@
 #include <linux/firewire-cdev.h>
 #include <linux/firewire-constants.h>
 
+#include "config.h"
+
 #define ptr_to_u64(p) ((uintptr_t)(p))
 
 #define PHY_REMOTE_ACCESS_PAGED(phy_id, page, port, reg) \

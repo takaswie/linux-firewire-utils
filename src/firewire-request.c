@@ -25,6 +25,8 @@
 #include <linux/firewire-constants.h>
 #include <asm/byteorder.h>
 
+#include "config.h"
+
 #define FCP_COMMAND_ADDR	0xfffff0000b00uLL
 #define FCP_RESPONSE_ADDR	0xfffff0000d00uLL
 

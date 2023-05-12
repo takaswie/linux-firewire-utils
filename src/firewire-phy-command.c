@@ -23,6 +23,8 @@
 #include <linux/firewire-cdev.h>
 #include <linux/firewire-constants.h>
 
+#include "config.h"
+
 #ifndef FW_CDEV_IOC_SEND_PHY_PACKET
 #error kernel headers too old
 #endif
