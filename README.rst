@@ -8,7 +8,8 @@ What's this?
 ============
 
 The linux-firewire-utils package contains Linux FireWire utilities for
-listing devices (lsfirewire, lsfirewirephy) and for querying and
+printing content of configuration ROM (config-rom-pretty-printer), for
+listing devices (lsfirewire, lsfirewirephy), and for querying and
 configuring devices (firewire-request, firewire-phy-command).
 
 
