@@ -502,7 +502,7 @@ static size_t format_line_prefix(char *buf, size_t length, size_t offset, uint32
 
     offset += IEEE1212_CONFIG_ROM_OFFSET;
 
-    consumed = snprintf(buf, length, "%3lx  %08x", offset, quadlet);
+    consumed = snprintf(buf, length, "%3zu  %08x", offset, quadlet);
 
     if (add_delimiter)
         consumed += snprintf(buf + consumed, length - consumed, "  ");
@@ -716,7 +716,7 @@ static size_t format_block_metadata(char *buf, size_t length, const char *block_
     consumed = snprintf(buf, length, "%s_length %d", block_name, block_length);
     if (1 + block_length != quadlet_count)
         consumed +=
-            snprintf(buf + consumed, length - consumed, " (actual length %ld)", quadlet_count - 1);
+            snprintf(buf + consumed, length - consumed, " (actual length %zu)", quadlet_count - 1);
 
     consumed += snprintf(buf + consumed, length - consumed, ", crc %d", block_crc);
     if (block_crc != actual_block_crc)
@@ -791,7 +791,7 @@ static size_t format_leaf_block(char **buf, size_t length, const struct ieee1212
     consumed = format_blank_prefix(buf[lines], length);
     if (spec_name != NULL)
         consumed += snprintf(buf[lines] + consumed, length - consumed, "%s ", spec_name);
-    snprintf(buf[lines] + consumed, length - consumed, "%s leaf at %lx", formatter->key_id_name,
+    snprintf(buf[lines] + consumed, length - consumed, "%s leaf at %zu", formatter->key_id_name,
              IEEE1212_CONFIG_ROM_OFFSET + offset);
     ++lines;
 
@@ -854,7 +854,7 @@ static size_t format_csr_offset_entry(char *buf, size_t length, size_t offset, u
     else
         consumed += snprintf(buf + consumed, length - consumed, "CSR ");
 
-    consumed += snprintf(buf + consumed, length - consumed, "at %012lx", csr_offset);
+    consumed += snprintf(buf + consumed, length - consumed, "at %012zu", csr_offset);
 
     return consumed;
 }
@@ -871,7 +871,7 @@ static size_t format_leaf_entry(char *buf, size_t length, size_t offset, uint32_
     if (formatter->key_id != INVALID_KEY_ID)
         consumed += snprintf(buf + consumed, length - consumed, "%s ", formatter->key_id_name);
 
-    consumed += snprintf(buf + consumed, length - consumed, "leaf at %lx", leaf_offset);
+    consumed += snprintf(buf + consumed, length - consumed, "leaf at %zu", leaf_offset);
 
     return consumed;
 }
@@ -888,7 +888,7 @@ static size_t format_directory_entry(char *buf, size_t length, size_t offset, ui
     if (formatter->key_id != INVALID_KEY_ID)
         consumed += snprintf(buf + consumed, length - consumed, "%s ", formatter->key_id_name);
 
-    consumed += snprintf(buf + consumed, length - consumed, "directory at %lx", directory_offset);
+    consumed += snprintf(buf + consumed, length - consumed, "directory at %zu", directory_offset);
 
     return consumed;
 }
@@ -1014,7 +1014,7 @@ static size_t format_directory_block(char **buf, size_t length,
     lines = 0;
 
     consumed = format_blank_prefix(buf[lines], length);
-    snprintf(buf[lines] + consumed, length - consumed, "%s directory at %lx",
+    snprintf(buf[lines] + consumed, length - consumed, "%s directory at %zu",
              formatter->key_id_name, IEEE1212_CONFIG_ROM_OFFSET + offset);
     ++lines;
 
