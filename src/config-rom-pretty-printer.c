@@ -12,7 +12,6 @@
 #include <fcntl.h>
 #include <unistd.h>
 
-#include <assert.h>
 #include <endian.h>
 #include <stdbool.h>
 #include <stdint.h>
