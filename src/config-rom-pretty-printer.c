@@ -16,6 +16,7 @@
 #include <stdbool.h>
 #include <stdint.h>
 #include <string.h>
+#include <inttypes.h>
 
 #include <sys/queue.h>
 
@@ -690,7 +691,8 @@ static size_t format_bus_info_block(char **buf, size_t length,
     ++lines;
 
     consumed = format_line_prefix(buf[lines], length, offset + 16, quadlet[4], true);
-    snprintf(buf[lines] + consumed, length - consumed, "device_id %010lx  | EUI-64 %016lx",
+    snprintf(buf[lines] + consumed, length - consumed,
+             "device_id %010" PRIu64 "  | EUI-64 %016" PRIu64,
              device_id, eui64);
     ++lines;
 
@@ -1500,12 +1502,12 @@ static size_t format_csr_unit_location_leaf_content(char **buf, size_t length, s
     upper_bound = (((uint64_t)quadlet[2]) << 32) | quadlet[3];
 
     consumed = format_line_prefix(buf[0], length, offset, quadlet[0], true);
-    snprintf(buf[0] + consumed, length - consumed, "base_address %016lx", base_address);
+    snprintf(buf[0] + consumed, length - consumed, "base_address %016" PRIu64, base_address);
 
     format_line_prefix(buf[1], length, offset + 4, quadlet[1], false);
 
     consumed = format_line_prefix(buf[2], length, offset + 8, quadlet[2], true);
-    snprintf(buf[2] + consumed, length - consumed, "upper_bound %016lx", upper_bound);
+    snprintf(buf[2] + consumed, length - consumed, "upper_bound %016" PRIu64, upper_bound);
 
     format_line_prefix(buf[3], length, offset + 12, quadlet[3], false);
 
@@ -1532,7 +1534,7 @@ static size_t format_csr_eui64_leaf_content(char **buf, size_t length, size_t of
     snprintf(buf[0] + consumed, length - consumed, "company_id %06x     | ", company_id);
 
     consumed = format_line_prefix(buf[1], length, offset + 4, quadlet[1], true);
-    snprintf(buf[1] + consumed, length - consumed, "device_id %010lx  | EUI-64 %016lx", device_id,
+    snprintf(buf[1] + consumed, length - consumed, "device_id %010" PRIu64 "  | EUI-64 %016" PRIu64, device_id,
              eui64);
 
     return 2;
