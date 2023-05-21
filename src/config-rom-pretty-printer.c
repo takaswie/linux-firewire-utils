@@ -380,7 +380,7 @@ static bool bus_info_block_is_big_endian(const uint8_t *data, ssize_t length, si
 
 static int print_blocks(const uint8_t *data, ssize_t data_length, struct list_head *head);
 
-int main(int argc, const char *argv[])
+int main(void)
 {
     struct list_head head;
     struct ieee1212_block *entry;
