@@ -21,7 +21,7 @@ sequence.
 
 ::
 
-    $ meson (--prefix=directory-to-install) build
+    $ meson setup (--prefix=directory-to-install) build
     $ meson compile -C build
     $ meson install -C build
 
