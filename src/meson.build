@@ -58,6 +58,7 @@ manuals = [
   'lsfirewirephy.8',
   'firewire-request.8',
   'firewire-phy-command.8',
+  'config-rom-pretty-printer.8',
 ]
 
 man_pages = []

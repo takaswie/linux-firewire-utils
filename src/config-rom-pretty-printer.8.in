@@ -1,0 +1,35 @@
+.TH config\-rom\-pretty\-printer 8 "5 Jun 2011" "@PACKAGE_STRING@"
+
+.IX config\-rom\-pretty\-printer
+.SH NAME
+config\-rom\-pretty\-printer \- IEEE 1212 / IEEE 1394 Configuration ROM pretty printer
+
+.SH SYNOPSIS
+.B config\-rom\-pretty\-printer
+<
+.I file
+
+cat
+.I file
+|
+.B config\-rom\-pretty\-printer
+
+.SH DESCRIPTION
+
+.B config\-rom\-pretty\-printer
+is a utility to read Configuration ROM data from stdin and writes a human-readable annotated
+representation to stdout. The data may be binary data formatted by IEEE 1212 (ISO/IEC 13213).
+
+It was firstly written by Stefan Richter 2010 as Python 2 script under unique license. Current
+version was written by Takashi Sakamoto 2023 as C language program under GPL v2 license and
+drops some legacy functions supported by the original one.
+
+.SH BUGS
+Report bugs to <@PACKAGE_BUGREPORT@>.
+.br
+@PACKAGE_NAME@ home page: <@PACKAGE_URL@>.
+.SH SEE ALSO
+.BR lsfirewire (8)
+.BR lsfirewirephy (8),
+.BR firewire-request (8)
+.BR firewire-phy-command (8)
