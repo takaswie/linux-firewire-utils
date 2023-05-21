@@ -1,0 +1,54 @@
+name: Build test
+
+on: [push, pull_request]
+
+jobs:
+  build_in_fedora_amd64_on_docker:
+    runs-on: ubuntu-latest
+    container:
+      image: fedora:latest
+    steps:
+    - name: Checkout repository.
+      uses: actions/checkout@v3
+    - name: Prepare build environment.
+      run: |
+        dnf -y upgrade
+        dnf -y install @development-tools
+        dnf -y install meson
+    - name: Initialization for build.
+      run: |
+        meson setup --prefix=/tmp/installation -Dwarning_level=2 build
+    - name: Display configuration.
+      run: |
+        meson configure build
+    - name: Build library.
+      run: |
+        meson compile -C build
+    - name: Test install.
+      run: |
+        meson install -C build
+
+  build_in_ubuntu_amd64_on_docker:
+    runs-on: ubuntu-latest
+    container:
+      image: ubuntu:latest
+    steps:
+    - name: Checkout repository.
+      uses: actions/checkout@v3
+    - name: Prepare build environment.
+      run: |
+        DEBIAN_FRONTEND=noninteractive apt-get update
+        DEBIAN_FRONTEND=noninteractive apt-get -y full-upgrade
+        DEBIAN_FRONTEND=noninteractive apt-get install -y git build-essential meson
+    - name: Initialization for build.
+      run: |
+        meson setup --prefix=/tmp. -Dwarning_level=2 . build
+    - name: Display configuration.
+      run: |
+        meson configure build
+    - name: Build library.
+      run: |
+        meson compile -C build
+    - name: Test install.
+      run: |
+        meson install -C build
