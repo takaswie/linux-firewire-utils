@@ -965,8 +965,8 @@ static size_t format_directory_block(char **buf, size_t length,
         base = directory;
         break;
     default:
-	base = NULL;
-	break;
+        base = NULL;
+        break;
     }
 
     while (base != NULL) {
