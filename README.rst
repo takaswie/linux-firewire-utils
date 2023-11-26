@@ -18,7 +18,7 @@ The latest release is
 Installation
 ============
 
-This package uses GNU Autoconf; you can use the standard installation
+This package uses `Meson Build system <https://mesonbuild.com/>`_; you can use the standard installation
 sequence.
 
 ::
