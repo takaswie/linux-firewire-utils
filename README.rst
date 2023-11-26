@@ -2,7 +2,7 @@
 Linux FireWire utilities
 ========================
 
-2023/05/21 Takashi Sakamoto
+2023/11/26 Takashi Sakamoto
 
 What's this?
 ============
@@ -52,3 +52,8 @@ Links
 Report bugs to linux1394-devel@lists.sourceforge.net.
 
 home page: `<http://ieee1394.docs.kernel.org/>`_
+
+How to make DEB package
+=======================
+
+- Please refer to `<https://salsa.debian.org/takaswie/linux-firewire-utils>`_.
