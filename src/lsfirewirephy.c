@@ -528,6 +528,6 @@ int main(int argc, char *argv[])
 		list_all_buses();
 	if (any_unknown_phys)
 		fputs("  Please check this web page for updated PHY IDs:\n"
-		      "  http://code.google.com/p/jujuutils/wiki/PhyIds\n", stderr);
+		      "  http://ieee1394.docs.kernel.org/en/latest/phy.html\n", stderr);
 	return 0;
 }
