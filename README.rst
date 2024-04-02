@@ -2,7 +2,7 @@
 Linux FireWire utilities
 ========================
 
-2023/11/26 Takashi Sakamoto
+2024/04/02 Takashi Sakamoto
 
 What's this?
 ============
@@ -13,7 +13,7 @@ configuration ROM (``config-rom-pretty-printer``), for listing devices (``lsfire
 ``firewire-phy-command``).
 
 The latest release is
-`version 0.5.0 <https://git.kernel.org/pub/scm/utils/ieee1394/linux-firewire-utils.git/tag/?h=v0.5.0>`_
+`version 0.5.1 <https://git.kernel.org/pub/scm/utils/ieee1394/linux-firewire-utils.git/tag/?h=v0.5.1>`_
 
 Installation
 ============
